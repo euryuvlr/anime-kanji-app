@@ -80,6 +80,62 @@ export type DailyActivity = {
   created_at: string
 }
 
+export type XpHistory = {
+  id: number
+  user_id: string
+  xp_amount: number
+  reason: string
+  created_at: string
+}
+
 export type ReviewRating = 'error' | 'hard' | 'medium' | 'easy'
 
 export type ReviewItem = Kanji | Word | Phrase
+
+// Database type for Supabase
+export interface Database {
+  public: {
+    Tables: {
+      profiles: {
+        Row: Profile
+        Insert: Omit<Profile, 'id' | 'created_at' | 'updated_at'>
+        Update: Partial<Omit<Profile, 'id' | 'created_at' | 'updated_at'>>
+      }
+      levels: {
+        Row: Level
+        Insert: Omit<Level, 'id' | 'created_at'>
+        Update: Partial<Omit<Level, 'id' | 'created_at'>>
+      }
+      kanji: {
+        Row: Kanji
+        Insert: Omit<Kanji, 'id' | 'created_at'>
+        Update: Partial<Omit<Kanji, 'id' | 'created_at'>>
+      }
+      words: {
+        Row: Word
+        Insert: Omit<Word, 'id' | 'created_at'>
+        Update: Partial<Omit<Word, 'id' | 'created_at'>>
+      }
+      phrases: {
+        Row: Phrase
+        Insert: Omit<Phrase, 'id' | 'created_at'>
+        Update: Partial<Omit<Phrase, 'id' | 'created_at'>>
+      }
+      reviews: {
+        Row: Review
+        Insert: Omit<Review, 'id' | 'created_at'>
+        Update: Partial<Omit<Review, 'id' | 'created_at'>>
+      }
+      daily_activities: {
+        Row: DailyActivity
+        Insert: Omit<DailyActivity, 'id' | 'created_at'>
+        Update: Partial<Omit<DailyActivity, 'id' | 'created_at'>>
+      }
+      xp_history: {
+        Row: XpHistory
+        Insert: Omit<XpHistory, 'id' | 'created_at'>
+        Update: Partial<Omit<XpHistory, 'id' | 'created_at'>>
+      }
+    }
+  }
+}

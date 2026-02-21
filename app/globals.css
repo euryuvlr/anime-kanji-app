@@ -8,14 +8,6 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -32,7 +24,7 @@ body {
   }
 }
 
-/* Anime-inspired animations */
+/* Animações inspiradas em anime */
 @keyframes float {
   0%, 100% {
     transform: translateY(0);
@@ -46,7 +38,7 @@ body {
   animation: float 3s ease-in-out infinite;
 }
 
-/* Custom scrollbar */
+/* Scrollbar personalizada */
 ::-webkit-scrollbar {
   width: 10px;
 }

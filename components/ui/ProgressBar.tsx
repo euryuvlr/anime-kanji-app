@@ -1,13 +1,13 @@
-import * as React from "react"
-import { cn } from "@/lib/utils"
+import * as React from "react";
+import { cn } from "@/lib/utils";
 
 interface ProgressBarProps extends React.HTMLAttributes<HTMLDivElement> {
-  value: number
-  max?: number
-  showLabel?: boolean
-  labelPosition?: 'top' | 'right' | 'bottom'
-  variant?: 'default' | 'success' | 'warning' | 'danger'
-  size?: 'sm' | 'md' | 'lg'
+  value: number;
+  max?: number;
+  showLabel?: boolean;
+  labelPosition?: 'top' | 'right' | 'bottom';
+  variant?: 'default' | 'success' | 'warning' | 'danger';
+  size?: 'sm' | 'md' | 'lg';
 }
 
 const variantStyles = {
@@ -15,13 +15,13 @@ const variantStyles = {
   success: 'bg-green-500',
   warning: 'bg-yellow-500',
   danger: 'bg-red-500'
-}
+};
 
 const sizeStyles = {
   sm: 'h-1',
   md: 'h-2.5',
   lg: 'h-4'
-}
+};
 
 export const ProgressBar = React.forwardRef<HTMLDivElement, ProgressBarProps>(
   ({ 
@@ -34,13 +34,13 @@ export const ProgressBar = React.forwardRef<HTMLDivElement, ProgressBarProps>(
     size = 'md',
     ...props 
   }, ref) => {
-    const percentage = Math.min(100, Math.max(0, (value / max) * 100))
+    const percentage = Math.min(100, Math.max(0, (value / max) * 100));
 
     const label = showLabel ? (
       <span className="text-sm font-medium text-gray-700">
         {Math.round(percentage)}%
       </span>
-    ) : null
+    ) : null;
 
     return (
       <div className={cn("w-full", className)} ref={ref} {...props}>
@@ -67,8 +67,8 @@ export const ProgressBar = React.forwardRef<HTMLDivElement, ProgressBarProps>(
           </div>
         )}
       </div>
-    )
+    );
   }
-)
+);
 
-ProgressBar.displayName = "ProgressBar"
+ProgressBar.displayName = "ProgressBar";

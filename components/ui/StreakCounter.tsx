@@ -1,11 +1,11 @@
-import * as React from "react"
-import { Flame } from "lucide-react"
-import { cn } from "@/lib/utils"
+import * as React from "react";
+import { Flame } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface StreakCounterProps extends React.HTMLAttributes<HTMLDivElement> {
-  days: number
-  size?: 'sm' | 'md' | 'lg'
-  showLabel?: boolean
+  days: number;
+  size?: 'sm' | 'md' | 'lg';
+  showLabel?: boolean;
 }
 
 const sizeStyles = {
@@ -24,12 +24,12 @@ const sizeStyles = {
     text: 'text-lg',
     padding: 'p-3'
   }
-}
+};
 
 export const StreakCounter = React.forwardRef<HTMLDivElement, StreakCounterProps>(
   ({ className, days, size = 'md', showLabel = true, ...props }, ref) => {
-    const styles = sizeStyles[size]
-    const hasStreak = days > 0
+    const styles = sizeStyles[size];
+    const hasStreak = days > 0;
 
     return (
       <div
@@ -60,8 +60,8 @@ export const StreakCounter = React.forwardRef<HTMLDivElement, StreakCounterProps
           </span>
         )}
       </div>
-    )
+    );
   }
-)
+);
 
-StreakCounter.displayName = "StreakCounter"
+StreakCounter.displayName = "StreakCounter";
